@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-black;
+}
+
+.container {
+    max-width: 320px;
+}
+.chat-grid {
+    grid-template-columns: 40px auto 40px;
+}
+
+.swiper-container {
+    @apply w-full h-full;
+}
+
+.swiper-slide {
+    @apply box-border py-2;
+    height: auto !important;
+}
+
+.typing__dot {
+float: left;
+width: 4px;
+height: 4px;
+margin-right: 8px;
+border-radius: 50%;
+opacity: 0;
+animation: loadingFade 1s infinite;
+
+@apply bg-gray-600;
+}
+
+.typing__dot:nth-child(1) {
+animation-delay: 0s;
+}
+
+.typing__dot:nth-child(2) {
+animation-delay: 0.2s;
+}
+
+.typing__dot:nth-child(3) {
+animation-delay: 0.4s;
+margin-right: 0;
+}
+
+@keyframes loadingFade {
+0% {
+    opacity: 0.1;
+    transform: scale(0.2);
+}
+50% {
+    opacity: 1.0;
+    transform: scale(1.0);
+}
+100% {
+    opacity: 0.1;
+    transform: scale(0.2);
+}
+}
